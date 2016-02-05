@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1fbcce59d7bc4df1911ec14226929451" Name="Diagram1">
+        <EntityTypeShape EntityType="CC_TEST_SQL_15_03_17_12_02_10RModel.AMT" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CC_TEST_SQL_15_03_17_12_02_10RModel.Archive" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CC_TEST_SQL_15_03_17_12_02_10RModel.CAS_Servers" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CC_TEST_SQL_15_03_17_12_02_10RModel.CCTJ" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CC_TEST_SQL_15_03_17_12_02_10RModel.PERSTAGRTLIST" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CC_TEST_SQL_15_03_17_12_02_10RModel.AMH" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CC_TEST_SQL_15_03_17_12_02_10RModel.Query" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CC_TEST_SQL_15_03_17_12_02_10RModel.SegmentChangesJournal" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CC_TEST_SQL_15_03_17_12_02_10RModel.TagCompressed" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CC_TEST_SQL_15_03_17_12_02_10RModel.TagUncompressed" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

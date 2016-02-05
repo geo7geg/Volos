@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CC_TEST_SQL_15_03_17_12_02_10RModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CC_TEST_SQL_15_03_17_12_02_10R.dbo.AMH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AMH">
+          <Key>
+            <PropertyRef Name="DSN" />
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="DSN" Type="varchar" MaxLength="123" Nullable="false" />
+          <Property Name="PrimaryFile" Type="varchar" MaxLength="255" />
+          <Property Name="Start" Type="datetime" />
+          <Property Name="Stop" Type="datetime" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="LastModification" Type="datetime" />
+          <Property Name="Type" Type="tinyint" Nullable="false" />
+          <Property Name="Flags" Type="int" />
+          <Property Name="ID" Type="int" />
+          <Property Name="DBStart" Type="datetime" />
+          <Property Name="DBStop" Type="datetime" />
+          <Property Name="AppName" Type="varchar" MaxLength="16" />
+          <Property Name="UserTable" Type="varchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="AMT">
+          <Key>
+            <PropertyRef Name="DSN" />
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="DSN" Type="varchar" MaxLength="123" Nullable="false" />
+          <Property Name="PrimaryFile" Type="varchar" MaxLength="255" />
+          <Property Name="Start" Type="datetime" />
+          <Property Name="Stop" Type="datetime" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="LastModification" Type="datetime" />
+          <Property Name="Type" Type="tinyint" Nullable="false" />
+          <Property Name="Flags" Type="int" />
+          <Property Name="ID" Type="int" />
+          <Property Name="DBStart" Type="datetime" />
+          <Property Name="DBStop" Type="datetime" />
+          <Property Name="AppName" Type="varchar" MaxLength="16" />
+          <Property Name="UserTable" Type="varchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="Archive">
+          <Key>
+            <PropertyRef Name="ValueID" />
+          </Key>
+          <Property Name="ValueID" Type="bigint" Nullable="false" />
+          <Property Name="ValueName" Type="char" MaxLength="255" />
+          <Property Name="LocaleID" Type="int" />
+          <Property Name="CompPrecision" Type="float" />
+          <Property Name="CompressionMode" Type="int" />
+          <Property Name="VarType" Type="int" />
+          <Property Name="Flags" Type="int" />
+          <Property Name="CtrF" Type="int" />
+          <Property Name="CtrS" Type="int" />
+          <Property Name="ID" Type="int" />
+          <Property Name="LastModification" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CAS_Servers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="LastModification" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CCTJ">
+          <Key>
+            <PropertyRef Name="I" />
+          </Key>
+          <Property Name="I" Type="int" Nullable="false" />
+          <Property Name="O" Type="varchar" MaxLength="50" />
+          <Property Name="N" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PERSTAGRTLIST">
+          <Key>
+            <PropertyRef Name="TAGID" />
+          </Key>
+          <Property Name="TAGID" Type="int" Nullable="false" />
+          <Property Name="TAGNAME" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="TAGTYPEID" Type="int" />
+          <Property Name="TAGCHANGEDATE" Type="nvarchar" MaxLength="32" />
+          <Property Name="VALUE" Type="nvarchar" MaxLength="2048" />
+          <Property Name="VALUETYPE" Type="int" />
+          <Property Name="STATE" Type="int" />
+          <Property Name="QUALITYCODE" Type="int" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="FLAGS" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CC_TEST_SQL_15_03_17_12_02_10R.dbo.Query' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Query">
+          <Key>
+            <PropertyRef Name="ValueID" />
+            <PropertyRef Name="Timestamp" />
+            <PropertyRef Name="RealValue" />
+            <PropertyRef Name="Quality" />
+            <PropertyRef Name="Flags" />
+          </Key>
+          <Property Name="ValueID" Type="int" Nullable="false" />
+          <Property Name="Timestamp" Type="datetime" Nullable="false" />
+          <Property Name="RealValue" Type="float" Nullable="false" />
+          <Property Name="Quality" Type="int" Nullable="false" />
+          <Property Name="Flags" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CC_TEST_SQL_15_03_17_12_02_10R.dbo.SegmentChangesJournal' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SegmentChangesJournal">
+          <Key>
+            <PropertyRef Name="DSN" />
+            <PropertyRef Name="ChangeMode" />
+            <PropertyRef Name="LastChanged" />
+            <PropertyRef Name="ArchiveType" />
+          </Key>
+          <Property Name="DSN" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ChangeMode" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="OldDSN" Type="nvarchar" MaxLength="128" />
+          <Property Name="LastChanged" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="24" />
+          <Property Name="ArchiveType" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CC_TEST_SQL_15_03_17_12_02_10R.dbo.TagCompressed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TagCompressed">
+          <Key>
+            <PropertyRef Name="ValueID" />
+            <PropertyRef Name="Timebegin" />
+            <PropertyRef Name="Timeend" />
+          </Key>
+          <Property Name="ValueID" Type="bigint" Nullable="false" />
+          <Property Name="Timebegin" Type="datetime" Nullable="false" />
+          <Property Name="Timeend" Type="datetime" Nullable="false" />
+          <Property Name="BinValues" Type="varbinary" MaxLength="2048" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CC_TEST_SQL_15_03_17_12_02_10R.dbo.TagUncompressed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TagUncompressed">
+          <Key>
+            <PropertyRef Name="ValueID" />
+            <PropertyRef Name="TimeStamp" />
+            <PropertyRef Name="MS" />
+          </Key>
+          <Property Name="ValueID" Type="bigint" Nullable="false" />
+          <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="MS" Type="smallint" Nullable="false" />
+          <Property Name="RealValue" Type="float" />
+          <Property Name="Quality" Type="int" />
+          <Property Name="Flags" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CC_TEST_SQL_15_03_17_12_02_10R.dbo.UserArchivesTables' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="UserArchivesTables">
+          <Property Name="TableID" Type="int" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="UserTable" Type="varchar" MaxLength="50" />
+          <Property Name="ArchiveID" Type="int" />
+        </EntityType>-->
+        <Function Name="CC_SP_AlgHitList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InSelect" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="InCalcServerSpecific" Type="nvarchar" Mode="In" />
+          <Parameter Name="V11Style" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CC_SP_AlgHitList_DropLS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CC_sp_PrepareHitlistTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Version" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CC_SP_ReadTags" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="List" Type="varchar" Mode="In" />
+          <Parameter Name="TimeBegin" Type="varchar" Mode="In" />
+          <Parameter Name="TimeEnd" Type="varchar" Mode="In" />
+          <Parameter Name="WHEREClause" Type="varchar" Mode="In" />
+          <Parameter Name="ORDERBYClause" Type="varchar" Mode="In" />
+          <Parameter Name="Timestep" Type="varchar" Mode="In" />
+          <Parameter Name="Aggregationmode" Type="int" Mode="In" />
+          <Parameter Name="SymDataSource" Type="varchar" Mode="In" />
+          <Parameter Name="SymCatalog" Type="varchar" Mode="In" />
+          <Parameter Name="LS_Name" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CCAlgCreateViews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ViewName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="CCTlgCreateViews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="fn_cctlg_GetValuesByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InValueId" Type="bigint" Mode="In" />
+          <Parameter Name="InTimeBegin" Type="nchar" Mode="In" />
+          <Parameter Name="InTimeEnd" Type="nchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Value" Type="float" />
+                <Property Name="TimeVal" Type="varchar" MaxLength="32" />
+                <Property Name="QualityCode" Type="int" />
+                <Property Name="Flags" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="fn_cctlg_GetValuesByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InValueName" Type="nchar" Mode="In" />
+          <Parameter Name="InTimeBegin" Type="nchar" Mode="In" />
+          <Parameter Name="InTimeEnd" Type="nchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Value" Type="float" />
+                <Property Name="TimeVal" Type="varchar" MaxLength="32" />
+                <Property Name="QualityCode" Type="int" />
+                <Property Name="Flags" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="fn_charindex" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="s" Type="nvarchar" Mode="In" />
+          <Parameter Name="pattern" Type="nvarchar" Mode="In" />
+          <Parameter Name="start" Type="int" Mode="In" />
+          <Parameter Name="delimiter" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_ccalg_ClearDataList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_CCAlg_CreateTempTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TableName" Type="nvarchar" Mode="In" />
+          <Parameter Name="SchemaVersion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_ccalg_GetMaxCounter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_ccalg_PrepareDataList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InArchiveID" Type="int" Mode="In" />
+          <Parameter Name="InArchiveType" Type="int" Mode="In" />
+          <Parameter Name="InState" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="sp_ccalg_PrepareTraceDataList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InTraceLevel" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_ccalg_ReadAlgBySchema" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InViewName" Type="nvarchar" Mode="In" />
+          <Parameter Name="InStoreTable" Type="nvarchar" Mode="In" />
+          <Parameter Name="InSelect" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="InTop" Type="int" Mode="In" />
+          <Parameter Name="DSN" Type="nvarchar" Mode="In" />
+          <Parameter Name="V11Style" Type="int" Mode="In" />
+          <Parameter Name="AlarmViewSchema" Type="int" Mode="In" />
+          <Parameter Name="InSelectV11" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_ccalg_ReadData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InViewName" Type="nchar" Mode="In" />
+          <Parameter Name="InSelect" Type="nvarchar" Mode="In" />
+          <Parameter Name="InTop" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_ccalg_ReadDataAMTPreselect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InViewName" Type="nchar" Mode="In" />
+          <Parameter Name="InStoreTable" Type="nchar" Mode="In" />
+          <Parameter Name="InSelect" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="InTop" Type="int" Mode="In" />
+          <Parameter Name="InAMTStart" Type="datetime" Mode="In" />
+          <Parameter Name="InAMTEnd" Type="datetime" Mode="In" />
+          <Parameter Name="InModeStoreTable" Type="nchar" Mode="In" />
+          <Parameter Name="InDirection" Type="nchar" Mode="In" />
+          <Parameter Name="RemoteServerName" Type="nchar" Mode="In" />
+          <Parameter Name="RemoteCatalog" Type="varchar" Mode="In" />
+          <Parameter Name="V11Style" Type="int" Mode="In" />
+          <Parameter Name="AlarmViewSchema" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_ccalg_ReadDataList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InAlgViewName" Type="nchar" Mode="In" />
+          <Parameter Name="InViewNameForAlarms" Type="nchar" Mode="In" />
+          <Parameter Name="InSelectStmt" Type="nvarchar" Mode="In" />
+          <Parameter Name="InTop" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_CCAlgCheckV11" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DSN" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_CCAlgConvertQueryString2Classic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InSelect" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="InSelectOther" Type="nvarchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="sp_CCAlgConvertQueryString2V11" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InSelect" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="InSelectOther" Type="nvarchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="sp_cctlg_GetCompressionRate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="InValueId" Type="int" Mode="In" />
+          <Parameter Name="InTimeBegin" Type="nchar" Mode="In" />
+          <Parameter Name="InTimeEnd" Type="nchar" Mode="In" />
+          <Parameter Name="CompRate" Type="float" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="CC_TEST_SQL_15_03_17_12_02_10RModelStoreContainer">
+          <EntitySet Name="AMT" EntityType="Self.AMT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Archive" EntityType="Self.Archive" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CAS_Servers" EntityType="Self.CAS_Servers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CCTJ" EntityType="Self.CCTJ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERSTAGRTLIST" EntityType="Self.PERSTAGRTLIST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AMH" EntityType="Self.AMH" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AMH].[DSN] AS [DSN], 
+    [AMH].[PrimaryFile] AS [PrimaryFile], 
+    [AMH].[Start] AS [Start], 
+    [AMH].[Stop] AS [Stop], 
+    [AMH].[Status] AS [Status], 
+    [AMH].[LastModification] AS [LastModification], 
+    [AMH].[Type] AS [Type], 
+    [AMH].[Flags] AS [Flags], 
+    [AMH].[ID] AS [ID], 
+    [AMH].[DBStart] AS [DBStart], 
+    [AMH].[DBStop] AS [DBStop], 
+    [AMH].[AppName] AS [AppName], 
+    [AMH].[UserTable] AS [UserTable]
+    FROM [dbo].[AMH] AS [AMH]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Query" EntityType="Self.Query" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Query].[ValueID] AS [ValueID], 
+    [Query].[Timestamp] AS [Timestamp], 
+    [Query].[RealValue] AS [RealValue], 
+    [Query].[Quality] AS [Quality], 
+    [Query].[Flags] AS [Flags]
+    FROM [dbo].[Query] AS [Query]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SegmentChangesJournal" EntityType="Self.SegmentChangesJournal" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SegmentChangesJournal].[DSN] AS [DSN], 
+    [SegmentChangesJournal].[ChangeMode] AS [ChangeMode], 
+    [SegmentChangesJournal].[OldDSN] AS [OldDSN], 
+    [SegmentChangesJournal].[LastChanged] AS [LastChanged], 
+    [SegmentChangesJournal].[Comment] AS [Comment], 
+    [SegmentChangesJournal].[ArchiveType] AS [ArchiveType]
+    FROM [dbo].[SegmentChangesJournal] AS [SegmentChangesJournal]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TagCompressed" EntityType="Self.TagCompressed" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TagCompressed].[ValueID] AS [ValueID], 
+    [TagCompressed].[Timebegin] AS [Timebegin], 
+    [TagCompressed].[Timeend] AS [Timeend], 
+    [TagCompressed].[BinValues] AS [BinValues]
+    FROM [dbo].[TagCompressed] AS [TagCompressed]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TagUncompressed" EntityType="Self.TagUncompressed" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TagUncompressed].[ValueID] AS [ValueID], 
+    [TagUncompressed].[TimeStamp] AS [TimeStamp], 
+    [TagUncompressed].[MS] AS [MS], 
+    [TagUncompressed].[RealValue] AS [RealValue], 
+    [TagUncompressed].[Quality] AS [Quality], 
+    [TagUncompressed].[Flags] AS [Flags]
+    FROM [dbo].[TagUncompressed] AS [TagUncompressed]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CC_TEST_SQL_15_03_17_12_02_10RModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="fn_cctlg_GetValuesByID_Result">
+          <Property Name="Value" Type="Double" />
+          <Property Name="TimeVal" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="QualityCode" Type="Int32" />
+          <Property Name="Flags" Type="Int32" />
+        </ComplexType>
+        <ComplexType Name="fn_cctlg_GetValuesByName_Result">
+          <Property Name="Value" Type="Double" />
+          <Property Name="TimeVal" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="QualityCode" Type="Int32" />
+          <Property Name="Flags" Type="Int32" />
+        </ComplexType>
+        <EntityType Name="AMT">
+          <Key>
+            <PropertyRef Name="DSN" />
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="DSN" Type="String" MaxLength="123" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimaryFile" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Start" Type="DateTime" Precision="3" />
+          <Property Name="Stop" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="LastModification" Type="DateTime" Precision="3" />
+          <Property Name="Type" Type="Byte" Nullable="false" />
+          <Property Name="Flags" Type="Int32" />
+          <Property Name="ID" Type="Int32" />
+          <Property Name="DBStart" Type="DateTime" Precision="3" />
+          <Property Name="DBStop" Type="DateTime" Precision="3" />
+          <Property Name="AppName" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="UserTable" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Archive">
+          <Key>
+            <PropertyRef Name="ValueID" />
+          </Key>
+          <Property Name="ValueID" Type="Int64" Nullable="false" />
+          <Property Name="ValueName" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="LocaleID" Type="Int32" />
+          <Property Name="CompPrecision" Type="Double" />
+          <Property Name="CompressionMode" Type="Int32" />
+          <Property Name="VarType" Type="Int32" />
+          <Property Name="Flags" Type="Int32" />
+          <Property Name="CtrF" Type="Int32" />
+          <Property Name="CtrS" Type="Int32" />
+          <Property Name="ID" Type="Int32" />
+          <Property Name="LastModification" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="CAS_Servers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LastModification" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CCTJ">
+          <Key>
+            <PropertyRef Name="I" />
+          </Key>
+          <Property Name="I" Type="Int32" Nullable="false" />
+          <Property Name="O" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="N" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PERSTAGRTLIST">
+          <Key>
+            <PropertyRef Name="TAGID" />
+          </Key>
+          <Property Name="TAGID" Type="Int32" Nullable="false" />
+          <Property Name="TAGNAME" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TAGTYPEID" Type="Int32" />
+          <Property Name="TAGCHANGEDATE" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="VALUE" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <Property Name="VALUETYPE" Type="Int32" />
+          <Property Name="STATE" Type="Int32" />
+          <Property Name="QUALITYCODE" Type="Int32" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="FLAGS" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AMH">
+          <Key>
+            <PropertyRef Name="DSN" />
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="DSN" Type="String" MaxLength="123" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimaryFile" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Start" Type="DateTime" Precision="3" />
+          <Property Name="Stop" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="LastModification" Type="DateTime" Precision="3" />
+          <Property Name="Type" Type="Byte" Nullable="false" />
+          <Property Name="Flags" Type="Int32" />
+          <Property Name="ID" Type="Int32" />
+          <Property Name="DBStart" Type="DateTime" Precision="3" />
+          <Property Name="DBStop" Type="DateTime" Precision="3" />
+          <Property Name="AppName" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="UserTable" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Query">
+          <Key>
+            <PropertyRef Name="ValueID" />
+            <PropertyRef Name="Timestamp" />
+            <PropertyRef Name="RealValue" />
+            <PropertyRef Name="Quality" />
+            <PropertyRef Name="Flags" />
+          </Key>
+          <Property Name="ValueID" Type="Int32" Nullable="false" />
+          <Property Name="Timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RealValue" Type="Double" Nullable="false" />
+          <Property Name="Quality" Type="Int32" Nullable="false" />
+          <Property Name="Flags" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SegmentChangesJournal">
+          <Key>
+            <PropertyRef Name="DSN" />
+            <PropertyRef Name="ChangeMode" />
+            <PropertyRef Name="LastChanged" />
+            <PropertyRef Name="ArchiveType" />
+          </Key>
+          <Property Name="DSN" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ChangeMode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OldDSN" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="LastChanged" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Comment" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="ArchiveType" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TagCompressed">
+          <Key>
+            <PropertyRef Name="ValueID" />
+            <PropertyRef Name="Timebegin" />
+            <PropertyRef Name="Timeend" />
+          </Key>
+          <Property Name="ValueID" Type="Int64" Nullable="false" />
+          <Property Name="Timebegin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Timeend" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BinValues" Type="Binary" MaxLength="2048" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TagUncompressed">
+          <Key>
+            <PropertyRef Name="ValueID" />
+            <PropertyRef Name="TimeStamp" />
+            <PropertyRef Name="MS" />
+          </Key>
+          <Property Name="ValueID" Type="Int64" Nullable="false" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MS" Type="Int16" Nullable="false" />
+          <Property Name="RealValue" Type="Double" />
+          <Property Name="Quality" Type="Int32" />
+          <Property Name="Flags" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="CC_TEST_SQL_15_03_17_12_02_10REntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AMT" EntityType="Self.AMT" />
+          <EntitySet Name="Archive" EntityType="Self.Archive" />
+          <EntitySet Name="CAS_Servers" EntityType="Self.CAS_Servers" />
+          <EntitySet Name="CCTJ" EntityType="Self.CCTJ" />
+          <EntitySet Name="PERSTAGRTLIST" EntityType="Self.PERSTAGRTLIST" />
+          <EntitySet Name="AMH" EntityType="Self.AMH" />
+          <EntitySet Name="Query" EntityType="Self.Query" />
+          <EntitySet Name="SegmentChangesJournal" EntityType="Self.SegmentChangesJournal" />
+          <EntitySet Name="TagCompressed" EntityType="Self.TagCompressed" />
+          <EntitySet Name="TagUncompressed" EntityType="Self.TagUncompressed" />
+          <FunctionImport Name="fn_cctlg_GetValuesByID" ReturnType="Collection(CC_TEST_SQL_15_03_17_12_02_10RModel.fn_cctlg_GetValuesByID_Result)" IsComposable="true">
+            <Parameter Name="InValueId" Mode="In" Type="Int64" />
+            <Parameter Name="InTimeBegin" Mode="In" Type="String" />
+            <Parameter Name="InTimeEnd" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="fn_cctlg_GetValuesByName" ReturnType="Collection(CC_TEST_SQL_15_03_17_12_02_10RModel.fn_cctlg_GetValuesByName_Result)" IsComposable="true">
+            <Parameter Name="InValueName" Mode="In" Type="String" />
+            <Parameter Name="InTimeBegin" Mode="In" Type="String" />
+            <Parameter Name="InTimeEnd" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CC_SP_AlgHitList">
+            <Parameter Name="InSelect" Mode="In" Type="String" />
+            <Parameter Name="InCalcServerSpecific" Mode="In" Type="String" />
+            <Parameter Name="V11Style" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CC_SP_AlgHitList_DropLS" />
+          <FunctionImport Name="CC_sp_PrepareHitlistTables">
+            <Parameter Name="Version" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CC_SP_ReadTags">
+            <Parameter Name="List" Mode="In" Type="String" />
+            <Parameter Name="TimeBegin" Mode="In" Type="String" />
+            <Parameter Name="TimeEnd" Mode="In" Type="String" />
+            <Parameter Name="WHEREClause" Mode="In" Type="String" />
+            <Parameter Name="ORDERBYClause" Mode="In" Type="String" />
+            <Parameter Name="Timestep" Mode="In" Type="String" />
+            <Parameter Name="Aggregationmode" Mode="In" Type="Int32" />
+            <Parameter Name="SymDataSource" Mode="In" Type="String" />
+            <Parameter Name="SymCatalog" Mode="In" Type="String" />
+            <Parameter Name="LS_Name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CCAlgCreateViews">
+            <Parameter Name="ViewName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CCTlgCreateViews" />
+          <FunctionImport Name="sp_ccalg_ClearDataList" />
+          <FunctionImport Name="sp_CCAlg_CreateTempTable">
+            <Parameter Name="TableName" Mode="In" Type="String" />
+            <Parameter Name="SchemaVersion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ccalg_GetMaxCounter" />
+          <FunctionImport Name="sp_ccalg_PrepareDataList">
+            <Parameter Name="InArchiveID" Mode="In" Type="Int32" />
+            <Parameter Name="InArchiveType" Mode="In" Type="Int32" />
+            <Parameter Name="InState" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ccalg_PrepareTraceDataList">
+            <Parameter Name="InTraceLevel" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ccalg_ReadAlgBySchema">
+            <Parameter Name="InViewName" Mode="In" Type="String" />
+            <Parameter Name="InStoreTable" Mode="In" Type="String" />
+            <Parameter Name="InSelect" Mode="In" Type="String" />
+            <Parameter Name="InTop" Mode="In" Type="Int32" />
+            <Parameter Name="DSN" Mode="In" Type="String" />
+            <Parameter Name="V11Style" Mode="In" Type="Int32" />
+            <Parameter Name="AlarmViewSchema" Mode="In" Type="Int32" />
+            <Parameter Name="InSelectV11" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ccalg_ReadData">
+            <Parameter Name="InViewName" Mode="In" Type="String" />
+            <Parameter Name="InSelect" Mode="In" Type="String" />
+            <Parameter Name="InTop" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ccalg_ReadDataAMTPreselect">
+            <Parameter Name="InViewName" Mode="In" Type="String" />
+            <Parameter Name="InStoreTable" Mode="In" Type="String" />
+            <Parameter Name="InSelect" Mode="In" Type="String" />
+            <Parameter Name="InTop" Mode="In" Type="Int32" />
+            <Parameter Name="InAMTStart" Mode="In" Type="DateTime" />
+            <Parameter Name="InAMTEnd" Mode="In" Type="DateTime" />
+            <Parameter Name="InModeStoreTable" Mode="In" Type="String" />
+            <Parameter Name="InDirection" Mode="In" Type="String" />
+            <Parameter Name="RemoteServerName" Mode="In" Type="String" />
+            <Parameter Name="RemoteCatalog" Mode="In" Type="String" />
+            <Parameter Name="V11Style" Mode="In" Type="Int32" />
+            <Parameter Name="AlarmViewSchema" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ccalg_ReadDataList">
+            <Parameter Name="InAlgViewName" Mode="In" Type="String" />
+            <Parameter Name="InViewNameForAlarms" Mode="In" Type="String" />
+            <Parameter Name="InSelectStmt" Mode="In" Type="String" />
+            <Parameter Name="InTop" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_CCAlgCheckV11">
+            <Parameter Name="DSN" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_CCAlgConvertQueryString2Classic">
+            <Parameter Name="InSelect" Mode="In" Type="String" />
+            <Parameter Name="InSelectOther" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_CCAlgConvertQueryString2V11">
+            <Parameter Name="InSelect" Mode="In" Type="String" />
+            <Parameter Name="InSelectOther" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_cctlg_GetCompressionRate">
+            <Parameter Name="InValueId" Mode="In" Type="Int32" />
+            <Parameter Name="InTimeBegin" Mode="In" Type="String" />
+            <Parameter Name="InTimeEnd" Mode="In" Type="String" />
+            <Parameter Name="CompRate" Mode="InOut" Type="Double" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CC_TEST_SQL_15_03_17_12_02_10RModelStoreContainer" CdmEntityContainer="CC_TEST_SQL_15_03_17_12_02_10REntities">
+          <EntitySetMapping Name="AMT">
+            <EntityTypeMapping TypeName="CC_TEST_SQL_15_03_17_12_02_10RModel.AMT">
+              <MappingFragment StoreEntitySet="AMT">
+                <ScalarProperty Name="DSN" ColumnName="DSN" />
+                <ScalarProperty Name="PrimaryFile" ColumnName="PrimaryFile" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Stop" ColumnName="Stop" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LastModification" ColumnName="LastModification" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Flags" ColumnName="Flags" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DBStart" ColumnName="DBStart" />
+                <ScalarProperty Name="DBStop" ColumnName="DBStop" />
+                <ScalarProperty Name="AppName" ColumnName="AppName" />
+                <ScalarProperty Name="UserTable" ColumnName="UserTable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Archive">
+            <EntityTypeMapping TypeName="CC_TEST_SQL_15_03_17_12_02_10RModel.Archive">
+              <MappingFragment StoreEntitySet="Archive">
+                <ScalarProperty Name="ValueID" ColumnName="ValueID" />
+                <ScalarProperty Name="ValueName" ColumnName="ValueName" />
+                <ScalarProperty Name="LocaleID" ColumnName="LocaleID" />
+                <ScalarProperty Name="CompPrecision" ColumnName="CompPrecision" />
+                <ScalarProperty Name="CompressionMode" ColumnName="CompressionMode" />
+                <ScalarProperty Name="VarType" ColumnName="VarType" />
+                <ScalarProperty Name="Flags" ColumnName="Flags" />
+                <ScalarProperty Name="CtrF" ColumnName="CtrF" />
+                <ScalarProperty Name="CtrS" ColumnName="CtrS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LastModification" ColumnName="LastModification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAS_Servers">
+            <EntityTypeMapping TypeName="CC_TEST_SQL_15_03_17_12_02_10RModel.CAS_Servers">
+              <MappingFragment StoreEntitySet="CAS_Servers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastModification" ColumnName="LastModification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CCTJ">
+            <EntityTypeMapping TypeName="CC_TEST_SQL_15_03_17_12_02_10RModel.CCTJ">
+              <MappingFragment StoreEntitySet="CCTJ">
+                <ScalarProperty Name="I" ColumnName="I" />
+                <ScalarProperty Name="O" ColumnName="O" />
+                <ScalarProperty Name="N" ColumnName="N" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSTAGRTLIST">
+            <EntityTypeMapping TypeName="CC_TEST_SQL_15_03_17_12_02_10RModel.PERSTAGRTLIST">
+              <MappingFragment StoreEntitySet="PERSTAGRTLIST">
+                <ScalarProperty Name="TAGID" ColumnName="TAGID" />
+                <ScalarProperty Name="TAGNAME" ColumnName="TAGNAME" />
+                <ScalarProperty Name="TAGTYPEID" ColumnName="TAGTYPEID" />
+                <ScalarProperty Name="TAGCHANGEDATE" ColumnName="TAGCHANGEDATE" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="VALUETYPE" ColumnName="VALUETYPE" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="QUALITYCODE" ColumnName="QUALITYCODE" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="FLAGS" ColumnName="FLAGS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AMH">
+            <EntityTypeMapping TypeName="CC_TEST_SQL_15_03_17_12_02_10RModel.AMH">
+              <MappingFragment StoreEntitySet="AMH">
+                <ScalarProperty Name="DSN" ColumnName="DSN" />
+                <ScalarProperty Name="PrimaryFile" ColumnName="PrimaryFile" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Stop" ColumnName="Stop" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LastModification" ColumnName="LastModification" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Flags" ColumnName="Flags" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DBStart" ColumnName="DBStart" />
+                <ScalarProperty Name="DBStop" ColumnName="DBStop" />
+                <ScalarProperty Name="AppName" ColumnName="AppName" />
+                <ScalarProperty Name="UserTable" ColumnName="UserTable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Query">
+            <EntityTypeMapping TypeName="CC_TEST_SQL_15_03_17_12_02_10RModel.Query">
+              <MappingFragment StoreEntitySet="Query">
+                <ScalarProperty Name="ValueID" ColumnName="ValueID" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="RealValue" ColumnName="RealValue" />
+                <ScalarProperty Name="Quality" ColumnName="Quality" />
+                <ScalarProperty Name="Flags" ColumnName="Flags" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SegmentChangesJournal">
+            <EntityTypeMapping TypeName="CC_TEST_SQL_15_03_17_12_02_10RModel.SegmentChangesJournal">
+              <MappingFragment StoreEntitySet="SegmentChangesJournal">
+                <ScalarProperty Name="DSN" ColumnName="DSN" />
+                <ScalarProperty Name="ChangeMode" ColumnName="ChangeMode" />
+                <ScalarProperty Name="OldDSN" ColumnName="OldDSN" />
+                <ScalarProperty Name="LastChanged" ColumnName="LastChanged" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ArchiveType" ColumnName="ArchiveType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TagCompressed">
+            <EntityTypeMapping TypeName="CC_TEST_SQL_15_03_17_12_02_10RModel.TagCompressed">
+              <MappingFragment StoreEntitySet="TagCompressed">
+                <ScalarProperty Name="ValueID" ColumnName="ValueID" />
+                <ScalarProperty Name="Timebegin" ColumnName="Timebegin" />
+                <ScalarProperty Name="Timeend" ColumnName="Timeend" />
+                <ScalarProperty Name="BinValues" ColumnName="BinValues" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TagUncompressed">
+            <EntityTypeMapping TypeName="CC_TEST_SQL_15_03_17_12_02_10RModel.TagUncompressed">
+              <MappingFragment StoreEntitySet="TagUncompressed">
+                <ScalarProperty Name="ValueID" ColumnName="ValueID" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="MS" ColumnName="MS" />
+                <ScalarProperty Name="RealValue" ColumnName="RealValue" />
+                <ScalarProperty Name="Quality" ColumnName="Quality" />
+                <ScalarProperty Name="Flags" ColumnName="Flags" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.fn_cctlg_GetValuesByID" FunctionImportName="fn_cctlg_GetValuesByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CC_TEST_SQL_15_03_17_12_02_10RModel.fn_cctlg_GetValuesByID_Result">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="TimeVal" ColumnName="TimeVal" />
+                <ScalarProperty Name="QualityCode" ColumnName="QualityCode" />
+                <ScalarProperty Name="Flags" ColumnName="Flags" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.fn_cctlg_GetValuesByName" FunctionImportName="fn_cctlg_GetValuesByName">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CC_TEST_SQL_15_03_17_12_02_10RModel.fn_cctlg_GetValuesByName_Result">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="TimeVal" ColumnName="TimeVal" />
+                <ScalarProperty Name="QualityCode" ColumnName="QualityCode" />
+                <ScalarProperty Name="Flags" ColumnName="Flags" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CC_SP_AlgHitList" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.CC_SP_AlgHitList" />
+          <FunctionImportMapping FunctionImportName="CC_SP_AlgHitList_DropLS" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.CC_SP_AlgHitList_DropLS" />
+          <FunctionImportMapping FunctionImportName="CC_sp_PrepareHitlistTables" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.CC_sp_PrepareHitlistTables" />
+          <FunctionImportMapping FunctionImportName="CC_SP_ReadTags" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.CC_SP_ReadTags" />
+          <FunctionImportMapping FunctionImportName="CCAlgCreateViews" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.CCAlgCreateViews" />
+          <FunctionImportMapping FunctionImportName="CCTlgCreateViews" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.CCTlgCreateViews" />
+          <FunctionImportMapping FunctionImportName="sp_ccalg_ClearDataList" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_ccalg_ClearDataList" />
+          <FunctionImportMapping FunctionImportName="sp_CCAlg_CreateTempTable" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_CCAlg_CreateTempTable" />
+          <FunctionImportMapping FunctionImportName="sp_ccalg_GetMaxCounter" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_ccalg_GetMaxCounter" />
+          <FunctionImportMapping FunctionImportName="sp_ccalg_PrepareDataList" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_ccalg_PrepareDataList" />
+          <FunctionImportMapping FunctionImportName="sp_ccalg_PrepareTraceDataList" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_ccalg_PrepareTraceDataList" />
+          <FunctionImportMapping FunctionImportName="sp_ccalg_ReadAlgBySchema" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_ccalg_ReadAlgBySchema" />
+          <FunctionImportMapping FunctionImportName="sp_ccalg_ReadData" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_ccalg_ReadData" />
+          <FunctionImportMapping FunctionImportName="sp_ccalg_ReadDataAMTPreselect" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_ccalg_ReadDataAMTPreselect" />
+          <FunctionImportMapping FunctionImportName="sp_ccalg_ReadDataList" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_ccalg_ReadDataList" />
+          <FunctionImportMapping FunctionImportName="sp_CCAlgCheckV11" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_CCAlgCheckV11" />
+          <FunctionImportMapping FunctionImportName="sp_CCAlgConvertQueryString2Classic" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_CCAlgConvertQueryString2Classic" />
+          <FunctionImportMapping FunctionImportName="sp_CCAlgConvertQueryString2V11" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_CCAlgConvertQueryString2V11" />
+          <FunctionImportMapping FunctionImportName="sp_cctlg_GetCompressionRate" FunctionName="CC_TEST_SQL_15_03_17_12_02_10RModel.Store.sp_cctlg_GetCompressionRate" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

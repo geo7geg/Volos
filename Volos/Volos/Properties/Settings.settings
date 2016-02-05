@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Volos.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CC_TEST_SQL_15_03_17_12_02_10RConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Driver={SQL Server};description=WinCC 6.0;server=VMVER1PC\WINCC;uid=LOUKAS;pwd=123456;app=Microsoft® Visual Studio® 2013;wsid=VMVER1PC\WINCC;database=CC_TEST_SQL_15_03_17_12_02_10R&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Driver={SQL Server};description=WinCC 6.0;server=VMVER1PC\WINCC;uid=LOUKAS;pwd=123456;app=Microsoft® Visual Studio® 2013;wsid=VMVER1PC\WINCC;database=CC_TEST_SQL_15_03_17_12_02_10R</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=SQLNCLI;Data Source=VMVER1PC\WINCC;Password=123456;User ID=LOUKAS;Initial Catalog=CC_TEST_SQL_15_03_17_12_02_10R&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=SQLNCLI;Data Source=VMVER1PC\WINCC;Password=123456;User ID=LOUKAS;Initial Catalog=CC_TEST_SQL_15_03_17_12_02_10R</Value>
+    </Setting>
+    <Setting Name="ConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Dsn=CC_TEST_SQL_15_03_17_12_02_10R;uid=LOUKAS;pwd=123456&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Dsn=CC_TEST_SQL_15_03_17_12_02_10R;uid=LOUKAS;pwd=123456</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

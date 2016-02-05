@@ -1,0 +1,1 @@
+Provider=WinCCOLEDBProvider.1;Catalog=CC_VOLOS_15_05_12_14_56_01R;Data Source=VMVER1PC\WINCC

@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volos", "Volos\Volos.csproj", "{78A9C4B1-01E3-42FD-9114-28F6B6478C9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{5D57637E-169B-45E9-B1B9-1F2FF4947B7F}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{C4BDB23C-8893-4067-A7BD-FB94746F8645}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://geo7geg.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Volos\\Volos.csproj
+		SccProjectName1 = Volos
+		SccLocalPath1 = Volos
+		SccProjectUniqueName2 = ClassLibrary\\ClassLibrary.csproj
+		SccProjectName2 = ClassLibrary
+		SccLocalPath2 = ClassLibrary
+		SccProjectUniqueName3 = Setup1\\Setup1.vdproj
+		SccProjectName3 = Setup1
+		SccLocalPath3 = Setup1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78A9C4B1-01E3-42FD-9114-28F6B6478C9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A9C4B1-01E3-42FD-9114-28F6B6478C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A9C4B1-01E3-42FD-9114-28F6B6478C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A9C4B1-01E3-42FD-9114-28F6B6478C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D57637E-169B-45E9-B1B9-1F2FF4947B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D57637E-169B-45E9-B1B9-1F2FF4947B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D57637E-169B-45E9-B1B9-1F2FF4947B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D57637E-169B-45E9-B1B9-1F2FF4947B7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4BDB23C-8893-4067-A7BD-FB94746F8645}.Debug|Any CPU.ActiveCfg = Debug
+		{C4BDB23C-8893-4067-A7BD-FB94746F8645}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
